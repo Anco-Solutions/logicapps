@@ -1663,3 +1663,347 @@ applyLanguage(
 console.log(
     "Logic Apps initialized successfully."
 );
+
+/* =========================================================
+   LOGIC APPS — INTERACTION
+   ========================================================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    /* =====================================================
+       ELEMENTS
+       ===================================================== */
+
+    const languageButton = document.getElementById("languageButton");
+    const languageMenu = document.getElementById("languageMenu");
+    const currentLanguage = document.getElementById("currentLanguage");
+
+    const savedLanguage =
+        localStorage.getItem("logicapps-language") || "en";
+
+
+    /* =====================================================
+       LANGUAGE
+       ===================================================== */
+
+    function applyLanguage(lang) {
+
+        if (
+            typeof translations === "undefined" ||
+            !translations[lang]
+        ) {
+            lang = "en";
+        }
+
+        const dictionary = translations[lang];
+
+        document.documentElement.lang = lang;
+
+        document
+            .querySelectorAll("[data-i18n]")
+            .forEach(element => {
+
+                const key = element.dataset.i18n;
+
+                if (
+                    dictionary[key] !== undefined
+                ) {
+                    element.innerHTML = dictionary[key];
+                }
+
+            });
+
+
+        if (currentLanguage) {
+            currentLanguage.textContent =
+                lang.toUpperCase();
+        }
+
+        localStorage.setItem(
+            "logicapps-language",
+            lang
+        );
+    }
+
+
+    /* =====================================================
+       LANGUAGE MENU
+       ===================================================== */
+
+    if (languageButton && languageMenu) {
+
+        languageButton.addEventListener(
+            "click",
+            event => {
+
+                event.stopPropagation();
+
+                languageMenu.classList.toggle(
+                    "active"
+                );
+
+            }
+        );
+
+
+        languageMenu
+            .querySelectorAll("[data-lang]")
+            .forEach(button => {
+
+                button.addEventListener(
+                    "click",
+                    () => {
+
+                        const lang =
+                            button.dataset.lang;
+
+                        applyLanguage(lang);
+
+                        languageMenu.classList.remove(
+                            "active"
+                        );
+
+                    }
+                );
+
+            });
+
+
+        document.addEventListener(
+            "click",
+            event => {
+
+                if (
+                    !languageButton.contains(event.target) &&
+                    !languageMenu.contains(event.target)
+                ) {
+
+                    languageMenu.classList.remove(
+                        "active"
+                    );
+
+                }
+
+            }
+        );
+
+    }
+
+
+    /* =====================================================
+       INITIAL LANGUAGE
+       ===================================================== */
+
+    applyLanguage(savedLanguage);
+
+
+    /* =====================================================
+       APPLICATION → PLANS
+       ===================================================== */
+
+    document
+        .querySelectorAll(".app-card[data-app]")
+        .forEach(card => {
+
+            const appId =
+                card.dataset.app;
+
+            if (
+                appId === "coming-soon"
+            ) {
+                return;
+            }
+
+            const link =
+                card.querySelector(".app-link");
+
+            if (!link) {
+                return;
+            }
+
+            link.addEventListener(
+                "click",
+                event => {
+
+                    const target =
+                        document.getElementById(
+                            `${appId}-plans`
+                        );
+
+                    if (!target) {
+                        return;
+                    }
+
+                    event.preventDefault();
+
+                    target.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start"
+                    });
+
+                }
+            );
+
+        });
+
+
+    /* =====================================================
+       PLAN SELECTION
+       ===================================================== */
+
+    document
+        .querySelectorAll(".plan-card")
+        .forEach(card => {
+
+            const button =
+                card.querySelector(".plan-button");
+
+            if (!button) {
+                return;
+            }
+
+
+            button.addEventListener(
+                "click",
+                () => {
+
+                    const product =
+                        button.dataset.product;
+
+                    const plan =
+                        button.dataset.plan;
+
+                    const paddlePrice =
+                        button.dataset.paddlePrice;
+
+
+                    /* Remove previous selection
+                       from this product */
+
+                    document
+                        .querySelectorAll(
+                            `.product-plans[data-product="${product}"] .plan-card`
+                        )
+                        .forEach(item => {
+
+                            item.classList.remove(
+                                "selected"
+                            );
+
+                        });
+
+
+                    /* Select current plan */
+
+                    card.classList.add(
+                        "selected"
+                    );
+
+
+                    /*
+                     * PADDLE
+                     *
+                     * We deliberately do NOT
+                     * start checkout yet.
+                     *
+                     * The real Paddle Price ID
+                     * will be inserted later.
+                     */
+
+                    if (!paddlePrice) {
+
+                        console.log(
+                            "Selected plan:",
+                            product,
+                            plan
+                        );
+
+                        return;
+
+                    }
+
+
+                    /*
+                     * Paddle checkout will be
+                     * connected here later.
+                     */
+
+                    console.log(
+                        "Paddle Price ID:",
+                        paddlePrice
+                    );
+
+                }
+            );
+
+        });
+
+
+    /* =====================================================
+       FOOTER YEAR
+       ===================================================== */
+
+    const yearElement =
+        document.getElementById("currentYear");
+
+    if (yearElement) {
+
+        yearElement.textContent =
+            new Date().getFullYear();
+
+    }
+
+
+    /* =====================================================
+       SMOOTH INTERNAL LINKS
+       ===================================================== */
+
+    document
+        .querySelectorAll(
+            'a[href^="#"]'
+        )
+        .forEach(link => {
+
+            link.addEventListener(
+                "click",
+                event => {
+
+                    const id =
+                        link.getAttribute("href");
+
+                    if (
+                        !id ||
+                        id === "#"
+                    ) {
+                        return;
+                    }
+
+                    const target =
+                        document.querySelector(id);
+
+                    if (!target) {
+                        return;
+                    }
+
+                    event.preventDefault();
+
+                    target.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start"
+                    });
+
+                }
+            );
+
+        });
+
+
+    /* =====================================================
+       READY
+       ===================================================== */
+
+    console.log(
+        "Logic Apps initialized successfully."
+    );
+
+});
