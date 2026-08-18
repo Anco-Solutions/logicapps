@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
 
     <meta
@@ -10,562 +12,1281 @@
 
     <meta
         name="description"
-        content="Logic Apps by Anco Solutions"
+        content="Logic Apps by Anco Solutions — useful applications built with logic."
     >
 
-    <meta name="theme-color" content="#0f172a">
+    <meta
+        name="theme-color"
+        content="#0f172a"
+    >
 
     <title>Logic Apps | Anco Solutions</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
 </head>
+
 
 <body>
 
-    <!-- ================= HEADER ================= -->
 
-    <header class="site-header">
+<!-- =====================================================
+     HEADER
+     ===================================================== -->
 
-        <div class="container header-inner">
+<header class="site-header">
 
-            <a href="#home" class="logo">
+    <div class="container header-inner">
 
-                <span class="logo-mark">
-                    LA
-                </span>
 
-                <span class="logo-text">
-                    <strong>LOGIC</strong> APPS
-                </span>
+        <a
+            href="#home"
+            class="logo"
+        >
 
+            <span class="logo-mark">
+                LA
+            </span>
+
+            <span class="logo-text">
+                <strong>LOGIC</strong> APPS
+            </span>
+
+        </a>
+
+
+        <nav class="main-nav">
+
+
+            <a
+                href="#apps"
+                data-i18n="nav_apps"
+            >
+                Applications
             </a>
 
 
-            <nav class="main-nav">
+            <a
+                href="#about"
+                data-i18n="nav_about"
+            >
+                About
+            </a>
 
-                <a href="#apps" data-i18n="nav_apps">
-                    Applications
-                </a>
 
-                <a href="#about" data-i18n="nav_about">
-                    About
-                </a>
+            <a
+                href="#contact"
+                data-i18n="nav_contact"
+            >
+                Contact
+            </a>
 
-                <a href="#contact" data-i18n="nav_contact">
-                    Contact
-                </a>
 
-                <!-- LANGUAGE SELECTOR -->
+            <!-- LANGUAGE SELECTOR -->
 
-                <div class="language-selector">
+            <div class="language-selector">
+
+                <button
+                    id="languageButton"
+                    class="language-button"
+                    type="button"
+                >
+
+                    🌐
+                    <span id="currentLanguage">
+                        EN
+                    </span>
+
+                    <span class="language-arrow">
+                        ⌄
+                    </span>
+
+                </button>
+
+
+                <div
+                    id="languageMenu"
+                    class="language-menu"
+                >
+
 
                     <button
-                        id="languageButton"
-                        class="language-button"
                         type="button"
-                        aria-label="Select language"
+                        data-lang="el"
                     >
-                        🌐 <span id="currentLanguage">EN</span>
-                        <span class="language-arrow">⌄</span>
+                        🇬🇷 Ελληνικά
                     </button>
 
 
-                    <div
-                        id="languageMenu"
-                        class="language-menu"
+                    <button
+                        type="button"
+                        data-lang="en"
                     >
-
-                        <button
-                            type="button"
-                            data-lang="el"
-                        >
-                            🇬🇷 Ελληνικά
-                        </button>
-
-                        <button
-                            type="button"
-                            data-lang="en"
-                        >
-                            🇬🇧 English
-                        </button>
-
-                        <button
-                            type="button"
-                            data-lang="de"
-                        >
-                            🇩🇪 Deutsch
-                        </button>
-
-                        <button
-                            type="button"
-                            data-lang="fr"
-                        >
-                            🇫🇷 Français
-                        </button>
-
-                        <button
-                            type="button"
-                            data-lang="es"
-                        >
-                            🇪🇸 Español
-                        </button>
-
-                        <button
-                            type="button"
-                            data-lang="it"
-                        >
-                            🇮🇹 Italiano
-                        </button>
-
-                        <button
-                            type="button"
-                            data-lang="pt"
-                        >
-                            🇵🇹 Português
-                        </button>
-
-                        <button
-                            type="button"
-                            data-lang="ru"
-                        >
-                            🇷🇺 Русский
-                        </button>
-
-                    </div>
-
-                </div>
-
-            </nav>
-
-        </div>
-
-    </header>
+                        🇬🇧 English
+                    </button>
 
 
-    <!-- ================= MAIN ================= -->
-
-    <main id="home">
-
-
-        <!-- ================= HERO ================= -->
-
-        <section class="hero">
-
-            <div class="container hero-content">
-
-
-                <div class="hero-text">
-
-                    <p
-                        class="eyebrow"
-                        data-i18n="hero_eyebrow"
+                    <button
+                        type="button"
+                        data-lang="de"
                     >
-                        BY ANCO SOLUTIONS
-                    </p>
+                        🇩🇪 Deutsch
+                    </button>
 
 
-                    <h1 data-i18n="hero_title">
-                        Useful applications.<br>
-                        Built with logic.
-                    </h1>
-
-
-                    <p
-                        class="hero-description"
-                        data-i18n="hero_description"
+                    <button
+                        type="button"
+                        data-lang="fr"
                     >
-                        Simple, practical and intelligent
-                        applications designed to make everyday
-                        tasks easier.
-                    </p>
+                        🇫🇷 Français
+                    </button>
 
 
-                    <div class="hero-buttons">
-
-                        <a
-                            href="#apps"
-                            class="btn btn-primary"
-                            data-i18n="hero_button_apps"
-                        >
-                            Explore Applications
-                        </a>
-
-
-                        <a
-                            href="#about"
-                            class="btn btn-secondary"
-                            data-i18n="hero_button_about"
-                        >
-                            About Anco Solutions
-                        </a>
-
-                    </div>
-
-                </div>
-
-
-                <div class="hero-visual">
-
-                    <div class="hero-card">
-
-                        <div class="hero-card-top">
-
-                            <span class="status-dot"></span>
-
-                            <span>
-                                LOGIC APPS
-                            </span>
-
-                        </div>
-
-
-                        <div class="hero-icon">
-                            LA
-                        </div>
-
-
-                        <h2 data-i18n="hero_card_title">
-                            Smart tools.<br>
-                            Simple solutions.
-                        </h2>
-
-
-                        <p data-i18n="hero_card_description">
-                            Applications created for
-                            real-world needs.
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- ================= APPLICATIONS ================= -->
-
-        <section
-            id="apps"
-            class="apps-section"
-        >
-
-            <div class="container">
-
-
-                <div class="section-heading">
-
-                    <p
-                        class="eyebrow"
-                        data-i18n="apps_eyebrow"
+                    <button
+                        type="button"
+                        data-lang="es"
                     >
-                        OUR APPLICATIONS
-                    </p>
+                        🇪🇸 Español
+                    </button>
 
 
-                    <h2 data-i18n="apps_title">
-                        Small apps.<br>
-                        Useful ideas.
-                    </h2>
+                    <button
+                        type="button"
+                        data-lang="it"
+                    >
+                        🇮🇹 Italiano
+                    </button>
 
 
-                    <p data-i18n="apps_description">
-                        Explore applications created by
-                        Anco Solutions to solve specific
-                        everyday and professional needs.
-                    </p>
-
-                </div>
-
-
-                <div class="apps-grid">
+                    <button
+                        type="button"
+                        data-lang="pt"
+                    >
+                        🇵🇹 Português
+                    </button>
 
 
-                    <!-- APP 1 -->
-
-                    <article class="app-card">
-
-                        <div class="app-image">
-
-                            <div class="app-placeholder">
-                                KEP-AEN
-                            </div>
-
-                        </div>
-
-
-                        <div class="app-content">
-
-                            <span
-                                class="app-category"
-                                data-i18n="kep_category"
-                            >
-                                MARITIME
-                            </span>
-
-
-                            <h3>
-                                KEP-AEN
-                            </h3>
-
-
-                            <p data-i18n="kep_description">
-                                A practical application designed
-                                to support maritime education
-                                and training.
-                            </p>
-
-
-                            <a
-                                href="#"
-                                class="app-link"
-                                data-i18n="open_app"
-                            >
-                                Open App →
-                            </a>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- APP 2 -->
-
-                    <article class="app-card">
-
-                        <div class="app-image">
-
-                            <div class="app-placeholder">
-                                DAILY
-                            </div>
-
-                        </div>
-
-
-                        <div class="app-content">
-
-                            <span
-                                class="app-category"
-                                data-i18n="expenses_category"
-                            >
-                                FINANCE
-                            </span>
-
-
-                            <h3>
-                                Daily Expenses
-                            </h3>
-
-
-                            <p data-i18n="expenses_description">
-                                A simple way to record,
-                                organize and monitor your
-                                daily expenses.
-                            </p>
-
-
-                            <a
-                                href="#"
-                                class="app-link"
-                                data-i18n="open_app"
-                            >
-                                Open App →
-                            </a>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- APP 3 -->
-
-                    <article class="app-card">
-
-                        <div class="app-image">
-
-                            <div class="app-placeholder">
-                                NEW APP
-                            </div>
-
-                        </div>
-
-
-                        <div class="app-content">
-
-                            <span
-                                class="app-category"
-                                data-i18n="coming_soon"
-                            >
-                                COMING SOON
-                            </span>
-
-
-                            <h3 data-i18n="next_app_title">
-                                Your next application
-                            </h3>
-
-
-                            <p data-i18n="next_app_description">
-                                New useful applications are
-                                currently being developed
-                                by Anco Solutions.
-                            </p>
-
-
-                            <a
-                                href="#contact"
-                                class="app-link"
-                                data-i18n="stay_tuned"
-                            >
-                                Stay tuned →
-                            </a>
-
-                        </div>
-
-                    </article>
+                    <button
+                        type="button"
+                        data-lang="ru"
+                    >
+                        🇷🇺 Русский
+                    </button>
 
 
                 </div>
 
             </div>
 
-        </section>
+
+        </nav>
+
+    </div>
+
+</header>
 
 
-        <!-- ================= ABOUT ================= -->
 
-        <section
-            id="about"
-            class="about-section"
-        >
+<!-- =====================================================
+     MAIN
+     ===================================================== -->
 
-            <div class="container about-grid">
+<main id="home">
 
 
-                <div class="about-title">
 
-                    <p
-                        class="eyebrow"
-                        data-i18n="about_eyebrow"
-                    >
-                        ANCO SOLUTIONS
-                    </p>
+<!-- =====================================================
+     HERO
+     ===================================================== -->
 
+<section class="hero">
 
-                    <h2 data-i18n="about_title">
-                        Technology with a purpose.
-                    </h2>
-
-                </div>
+    <div class="container hero-content">
 
 
-                <div class="about-text">
-
-                    <p data-i18n="about_text_1">
-                        Anco Solutions develops small,
-                        practical and easy-to-use applications
-                        designed to solve real problems.
-                    </p>
+        <div class="hero-text">
 
 
-                    <p data-i18n="about_text_2">
-                        Our philosophy is simple:
-                        <strong>
-                            keep things logical, useful and easy.
-                        </strong>
-                    </p>
+            <p
+                class="eyebrow"
+                data-i18n="hero_eyebrow"
+            >
+                BY ANCO SOLUTIONS
+            </p>
 
 
-                    <p data-i18n="about_text_3">
-                        Logic Apps is our collection of
-                        applications — tools created to help
-                        people work smarter, faster and more
-                        efficiently.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </section>
+            <h1
+                data-i18n="hero_title"
+            >
+                Useful applications.<br>
+                Built with logic.
+            </h1>
 
 
-        <!-- ================= CONTACT ================= -->
-
-        <section
-            id="contact"
-            class="contact-section"
-        >
-
-            <div class="container contact-box">
-
-                <p
-                    class="eyebrow"
-                    data-i18n="contact_eyebrow"
-                >
-                    GET IN TOUCH
-                </p>
+            <p
+                class="hero-description"
+                data-i18n="hero_description"
+            >
+                Simple, practical and intelligent
+                applications designed to make everyday
+                tasks easier.
+            </p>
 
 
-                <h2 data-i18n="contact_title">
-                    Have an idea for an app?
-                </h2>
-
-
-                <p data-i18n="contact_description">
-                    We are always interested in useful ideas
-                    and practical solutions.
-                </p>
+            <div class="hero-buttons">
 
 
                 <a
-                    href="mailto:info@logicapps.store"
+                    href="#apps"
                     class="btn btn-primary"
-                    data-i18n="contact_button"
+                    data-i18n="hero_button_apps"
                 >
-                    Contact Us
+                    Explore Applications
                 </a>
 
+
+                <a
+                    href="#about"
+                    class="btn btn-secondary"
+                    data-i18n="hero_button_about"
+                >
+                    About Anco Solutions
+                </a>
+
+
             </div>
 
-        </section>
 
-    </main>
+        </div>
 
 
-    <!-- ================= FOOTER ================= -->
 
-    <footer class="site-footer">
+        <div class="hero-visual">
 
-        <div class="container footer-inner">
 
-            <div>
+            <div class="hero-card">
 
-                <strong>
-                    LOGIC APPS
-                </strong>
 
-                <span>
-                    by Anco Solutions
+                <div class="hero-card-top">
+
+                    <span class="status-dot"></span>
+
+                    <span>
+                        LOGIC APPS
+                    </span>
+
+                </div>
+
+
+                <div class="hero-icon">
+                    LA
+                </div>
+
+
+                <h2
+                    data-i18n="hero_card_title"
+                >
+                    Smart tools.<br>
+                    Simple solutions.
+                </h2>
+
+
+                <p
+                    data-i18n="hero_card_description"
+                >
+                    Applications created for
+                    real-world needs.
+                </p>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     APPLICATIONS
+     ===================================================== -->
+
+<section
+    id="apps"
+    class="apps-section"
+>
+
+
+    <div class="container">
+
+
+        <div class="section-heading">
+
+
+            <p
+                class="eyebrow"
+                data-i18n="apps_eyebrow"
+            >
+                OUR APPLICATIONS
+            </p>
+
+
+            <h2
+                data-i18n="apps_title"
+            >
+                Small apps.<br>
+                Useful ideas.
+            </h2>
+
+
+            <p
+                data-i18n="apps_description"
+            >
+                Explore applications created by
+                Anco Solutions to solve specific
+                everyday and professional needs.
+            </p>
+
+
+        </div>
+
+
+
+        <div class="apps-grid">
+
+
+
+            <!-- =================================================
+                 KEP-AEN
+                 ================================================= -->
+
+            <article
+                class="app-card"
+                data-app="kep-aen"
+            >
+
+
+                <div class="app-image">
+
+                    <div class="app-placeholder">
+                        KEP-AEN
+                    </div>
+
+                </div>
+
+
+
+                <div class="app-content">
+
+
+                    <span
+                        class="app-category"
+                        data-i18n="kep_category"
+                    >
+                        MARITIME
+                    </span>
+
+
+                    <h3>
+                        KEP-AEN
+                    </h3>
+
+
+                    <p
+                        data-i18n="kep_description"
+                    >
+                        A practical application designed
+                        to support maritime education
+                        and training.
+                    </p>
+
+
+                    <a
+                        href="#kep-aen-plans"
+                        class="app-link"
+                        data-i18n="view_plans"
+                    >
+                        View Plans →
+                    </a>
+
+
+                </div>
+
+
+            </article>
+
+
+
+            <!-- =================================================
+                 DAILY EXPENSES
+                 ================================================= -->
+
+            <article
+                class="app-card"
+                data-app="daily-expenses"
+            >
+
+
+                <div class="app-image">
+
+                    <div class="app-placeholder">
+                        DAILY
+                    </div>
+
+                </div>
+
+
+
+                <div class="app-content">
+
+
+                    <span
+                        class="app-category"
+                        data-i18n="expenses_category"
+                    >
+                        FINANCE
+                    </span>
+
+
+                    <h3>
+                        Daily Expenses
+                    </h3>
+
+
+                    <p
+                        data-i18n="expenses_description"
+                    >
+                        A simple way to record,
+                        organize and monitor your
+                        daily expenses.
+                    </p>
+
+
+                    <a
+                        href="#daily-expenses-plans"
+                        class="app-link"
+                        data-i18n="view_plans"
+                    >
+                        View Plans →
+                    </a>
+
+
+                </div>
+
+
+            </article>
+
+
+
+            <!-- =================================================
+                 COMING SOON
+                 ================================================= -->
+
+            <article
+                class="app-card"
+                data-app="coming-soon"
+            >
+
+
+                <div class="app-image">
+
+                    <div class="app-placeholder">
+                        NEW APP
+                    </div>
+
+                </div>
+
+
+
+                <div class="app-content">
+
+
+                    <span
+                        class="app-category"
+                        data-i18n="coming_soon"
+                    >
+                        COMING SOON
+                    </span>
+
+
+                    <h3
+                        data-i18n="next_app_title"
+                    >
+                        Your next application
+                    </h3>
+
+
+                    <p
+                        data-i18n="next_app_description"
+                    >
+                        New useful applications are
+                        currently being developed
+                        by Anco Solutions.
+                    </p>
+
+
+                    <a
+                        href="#contact"
+                        class="app-link"
+                        data-i18n="stay_tuned"
+                    >
+                        Stay tuned →
+                    </a>
+
+
+                </div>
+
+
+            </article>
+
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PRICING / PURCHASE
+     ===================================================== -->
+
+<section
+    id="plans"
+    class="plans-section"
+>
+
+
+    <div class="container">
+
+
+        <div class="section-heading">
+
+
+            <p
+                class="eyebrow"
+                data-i18n="plans_eyebrow"
+            >
+                CHOOSE YOUR ACCESS
+            </p>
+
+
+            <h2
+                data-i18n="plans_title"
+            >
+                Try it. Choose your plan.
+            </h2>
+
+
+            <p
+                data-i18n="plans_description"
+            >
+                Flexible access options designed
+                for different needs.
+            </p>
+
+
+        </div>
+
+
+
+        <!-- =================================================
+             KEP-AEN PLANS
+             ================================================= -->
+
+        <div
+            id="kep-aen-plans"
+            class="product-plans"
+            data-product="kep-aen"
+        >
+
+
+            <div class="product-heading">
+
+                <span
+                    class="app-category"
+                    data-i18n="kep_category"
+                >
+                    MARITIME
                 </span>
 
+                <h3>
+                    KEP-AEN
+                </h3>
+
             </div>
 
 
-            <div>
 
-                © <span id="footerYear"></span>
-                Anco Solutions
+            <div class="plans-grid">
+
+
+
+                <!-- TRIAL -->
+
+                <article
+                    class="plan-card"
+                    data-plan="trial"
+                >
+
+                    <span
+                        class="plan-badge"
+                        data-i18n="trial_badge"
+                    >
+                        FREE TRIAL
+                    </span>
+
+
+                    <h4
+                        data-i18n="trial_title"
+                    >
+                        7 Days
+                    </h4>
+
+
+                    <p
+                        data-i18n="trial_description"
+                    >
+                        Try the application free
+                        for 7 days.
+                    </p>
+
+
+                    <div class="plan-price">
+                        FREE
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="plan-button"
+                        data-product="kep-aen"
+                        data-plan="trial"
+                        data-paddle-price=""
+                        data-i18n="start_trial"
+                    >
+                        Start Trial
+                    </button>
+
+                </article>
+
+
+
+                <!-- MONTHLY -->
+
+                <article
+                    class="plan-card"
+                    data-plan="monthly"
+                >
+
+                    <h4
+                        data-i18n="monthly_title"
+                    >
+                        Monthly
+                    </h4>
+
+
+                    <p
+                        data-i18n="monthly_description"
+                    >
+                        Access for one month.
+                    </p>
+
+
+                    <div class="plan-price">
+                        <span
+                            data-price="kep-aen-monthly"
+                        >
+                            €—
+                        </span>
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="plan-button"
+                        data-product="kep-aen"
+                        data-plan="monthly"
+                        data-paddle-price=""
+                        data-i18n="choose_plan"
+                    >
+                        Choose Plan
+                    </button>
+
+                </article>
+
+
+
+                <!-- YEARLY -->
+
+                <article
+                    class="plan-card featured"
+                    data-plan="yearly"
+                >
+
+                    <span
+                        class="plan-badge"
+                        data-i18n="popular_badge"
+                    >
+                        POPULAR
+                    </span>
+
+
+                    <h4
+                        data-i18n="yearly_title"
+                    >
+                        Yearly
+                    </h4>
+
+
+                    <p
+                        data-i18n="yearly_description"
+                    >
+                        Access for one full year.
+                    </p>
+
+
+                    <div class="plan-price">
+                        <span
+                            data-price="kep-aen-yearly"
+                        >
+                            €—
+                        </span>
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="plan-button"
+                        data-product="kep-aen"
+                        data-plan="yearly"
+                        data-paddle-price=""
+                        data-i18n="choose_plan"
+                    >
+                        Choose Plan
+                    </button>
+
+                </article>
+
+
+
+                <!-- LIFETIME -->
+
+                <article
+                    class="plan-card"
+                    data-plan="lifetime"
+                >
+
+                    <span
+                        class="plan-badge"
+                        data-i18n="one_time_badge"
+                    >
+                        ONE TIME
+                    </span>
+
+
+                    <h4
+                        data-i18n="lifetime_title"
+                    >
+                        Lifetime
+                    </h4>
+
+
+                    <p
+                        data-i18n="lifetime_description"
+                    >
+                        One payment. Lifetime access.
+                    </p>
+
+
+                    <div class="plan-price">
+                        <span
+                            data-price="kep-aen-lifetime"
+                        >
+                            €—
+                        </span>
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="plan-button"
+                        data-product="kep-aen"
+                        data-plan="lifetime"
+                        data-paddle-price=""
+                        data-i18n="choose_plan"
+                    >
+                        Choose Plan
+                    </button>
+
+                </article>
+
 
             </div>
 
         </div>
 
-    </footer>
 
 
-    <script src="app.js"></script>
+        <!-- =================================================
+             DAILY EXPENSES PLANS
+             ================================================= -->
+
+        <div
+            id="daily-expenses-plans"
+            class="product-plans"
+            data-product="daily-expenses"
+        >
+
+
+            <div class="product-heading">
+
+                <span
+                    class="app-category"
+                    data-i18n="expenses_category"
+                >
+                    FINANCE
+                </span>
+
+                <h3>
+                    Daily Expenses
+                </h3>
+
+            </div>
+
+
+
+            <div class="plans-grid">
+
+
+
+                <!-- TRIAL -->
+
+                <article
+                    class="plan-card"
+                    data-plan="trial"
+                >
+
+                    <span
+                        class="plan-badge"
+                        data-i18n="trial_badge"
+                    >
+                        FREE TRIAL
+                    </span>
+
+
+                    <h4
+                        data-i18n="trial_title"
+                    >
+                        7 Days
+                    </h4>
+
+
+                    <p
+                        data-i18n="trial_description"
+                    >
+                        Try the application free
+                        for 7 days.
+                    </p>
+
+
+                    <div class="plan-price">
+                        FREE
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="plan-button"
+                        data-product="daily-expenses"
+                        data-plan="trial"
+                        data-paddle-price=""
+                        data-i18n="start_trial"
+                    >
+                        Start Trial
+                    </button>
+
+                </article>
+
+
+
+                <!-- MONTHLY -->
+
+                <article
+                    class="plan-card"
+                    data-plan="monthly"
+                >
+
+                    <h4
+                        data-i18n="monthly_title"
+                    >
+                        Monthly
+                    </h4>
+
+
+                    <p
+                        data-i18n="monthly_description"
+                    >
+                        Access for one month.
+                    </p>
+
+
+                    <div class="plan-price">
+                        <span
+                            data-price="daily-expenses-monthly"
+                        >
+                            €—
+                        </span>
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="plan-button"
+                        data-product="daily-expenses"
+                        data-plan="monthly"
+                        data-paddle-price=""
+                        data-i18n="choose_plan"
+                    >
+                        Choose Plan
+                    </button>
+
+                </article>
+
+
+
+                <!-- YEARLY -->
+
+                <article
+                    class="plan-card featured"
+                    data-plan="yearly"
+                >
+
+                    <span
+                        class="plan-badge"
+                        data-i18n="popular_badge"
+                    >
+                        POPULAR
+                    </span>
+
+
+                    <h4
+                        data-i18n="yearly_title"
+                    >
+                        Yearly
+                    </h4>
+
+
+                    <p
+                        data-i18n="yearly_description"
+                    >
+                        Access for one full year.
+                    </p>
+
+
+                    <div class="plan-price">
+                        <span
+                            data-price="daily-expenses-yearly"
+                        >
+                            €—
+                        </span>
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="plan-button"
+                        data-product="daily-expenses"
+                        data-plan="yearly"
+                        data-paddle-price=""
+                        data-i18n="choose_plan"
+                    >
+                        Choose Plan
+                    </button>
+
+                </article>
+
+
+
+                <!-- LIFETIME -->
+
+                <article
+                    class="plan-card"
+                    data-plan="lifetime"
+                >
+
+                    <span
+                        class="plan-badge"
+                        data-i18n="one_time_badge"
+                    >
+                        ONE TIME
+                    </span>
+
+
+                    <h4
+                        data-i18n="lifetime_title"
+                    >
+                        Lifetime
+                    </h4>
+
+
+                    <p
+                        data-i18n="lifetime_description"
+                    >
+                        One payment. Lifetime access.
+                    </p>
+
+
+                    <div class="plan-price">
+                        <span
+                            data-price="daily-expenses-lifetime"
+                        >
+                            €—
+                        </span>
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="plan-button"
+                        data-product="daily-expenses"
+                        data-plan="lifetime"
+                        data-paddle-price=""
+                        data-i18n="choose_plan"
+                    >
+                        Choose Plan
+                    </button>
+
+                </article>
+
+
+            </div>
+
+        </div>
+
+
+        <!-- PADDLE NOTICE -->
+
+        <div class="payment-notice">
+
+            <span>
+                🔒
+            </span>
+
+            <p data-i18n="payment_notice">
+                Secure payments will be processed
+                through Paddle.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     ABOUT
+     ===================================================== -->
+
+<section
+    id="about"
+    class="about-section"
+>
+
+
+    <div class="container about-grid">
+
+
+        <div class="about-title">
+
+
+            <p
+                class="eyebrow"
+                data-i18n="about_eyebrow"
+            >
+                ANCO SOLUTIONS
+            </p>
+
+
+            <h2
+                data-i18n="about_title"
+            >
+                Technology with a purpose.
+            </h2>
+
+
+        </div>
+
+
+
+        <div class="about-text">
+
+
+            <p
+                data-i18n="about_text_1"
+            >
+                Anco Solutions develops small,
+                practical and easy-to-use applications
+                designed to solve real problems.
+            </p>
+
+
+            <p
+                data-i18n="about_text_2"
+            >
+                Our philosophy is simple:
+                keep things logical, useful and easy.
+            </p>
+
+
+            <p
+                data-i18n="about_text_3"
+            >
+                Logic Apps is our collection of
+                applications — tools created to help
+                people work smarter, faster and more
+                efficiently.
+            </p>
+
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CONTACT
+     ===================================================== -->
+
+<section
+    id="contact"
+    class="contact-section"
+>
+
+
+    <div class="container contact-box">
+
+
+        <p
+            class="eyebrow"
+            data-i18n="contact_eyebrow"
+        >
+            GET IN TOUCH
+        </p>
+
+
+        <h2
+            data-i18n="contact_title"
+        >
+            Have an idea for an app?
+        </h2>
+
+
+        <p
+            data-i18n="contact_description"
+        >
+            We are always interested in useful ideas
+            and practical solutions.
+        </p>
+
+
+        <a
+            href="mailto:info@logicapps.store"
+            class="btn btn-primary"
+            data-i18n="contact_button"
+        >
+            Contact Us
+        </a>
+
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     FOOTER
+     ===================================================== -->
+
+<footer class="site-footer">
+
+
+    <div class="container footer-inner">
+
+
+        <div>
+
+            <strong>
+                LOGIC APPS
+            </strong>
+
+            <span>
+                by Anco Solutions
+            </span>
+
+        </div>
+
+
+        <div>
+
+            ©
+            <span id="footerYear">
+                2026
+            </span>
+
+            Anco Solutions
+
+        </div>
+
+
+    </div>
+
+</footer>
+
+
+
+<!-- =====================================================
+     PADDLE
+     ===================================================== -->
+
+<!--
+     Paddle will be connected here later.
+
+     IMPORTANT:
+     Do not add real Paddle credentials yet.
+
+     The plan buttons already contain:
+     data-product
+     data-plan
+     data-paddle-price
+
+     We will connect these to Paddle
+     after the products and prices are created.
+-->
+
+
+<script src="app.js"></script>
+
 
 </body>
 
