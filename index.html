@@ -2,10 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description"
-          content="Logic Apps by Anco Solutions — simple, useful and logical applications.">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Logic Apps by Anco Solutions"
+    >
 
     <meta name="theme-color" content="#0f172a">
 
@@ -22,19 +28,112 @@
 
         <div class="container header-inner">
 
-            <a href="#" class="logo">
-                <span class="logo-mark">LA</span>
+            <a href="#home" class="logo">
+
+                <span class="logo-mark">
+                    LA
+                </span>
 
                 <span class="logo-text">
                     <strong>LOGIC</strong> APPS
                 </span>
+
             </a>
+
 
             <nav class="main-nav">
 
-                <a href="#apps">Applications</a>
-                <a href="#about">About</a>
-                <a href="#contact">Contact</a>
+                <a href="#apps" data-i18n="nav_apps">
+                    Applications
+                </a>
+
+                <a href="#about" data-i18n="nav_about">
+                    About
+                </a>
+
+                <a href="#contact" data-i18n="nav_contact">
+                    Contact
+                </a>
+
+                <!-- LANGUAGE SELECTOR -->
+
+                <div class="language-selector">
+
+                    <button
+                        id="languageButton"
+                        class="language-button"
+                        type="button"
+                        aria-label="Select language"
+                    >
+                        🌐 <span id="currentLanguage">EN</span>
+                        <span class="language-arrow">⌄</span>
+                    </button>
+
+
+                    <div
+                        id="languageMenu"
+                        class="language-menu"
+                    >
+
+                        <button
+                            type="button"
+                            data-lang="el"
+                        >
+                            🇬🇷 Ελληνικά
+                        </button>
+
+                        <button
+                            type="button"
+                            data-lang="en"
+                        >
+                            🇬🇧 English
+                        </button>
+
+                        <button
+                            type="button"
+                            data-lang="de"
+                        >
+                            🇩🇪 Deutsch
+                        </button>
+
+                        <button
+                            type="button"
+                            data-lang="fr"
+                        >
+                            🇫🇷 Français
+                        </button>
+
+                        <button
+                            type="button"
+                            data-lang="es"
+                        >
+                            🇪🇸 Español
+                        </button>
+
+                        <button
+                            type="button"
+                            data-lang="it"
+                        >
+                            🇮🇹 Italiano
+                        </button>
+
+                        <button
+                            type="button"
+                            data-lang="pt"
+                        >
+                            🇵🇹 Português
+                        </button>
+
+                        <button
+                            type="button"
+                            data-lang="ru"
+                        >
+                            🇷🇺 Русский
+                        </button>
+
+                    </div>
+
+                </div>
 
             </nav>
 
@@ -43,37 +142,60 @@
     </header>
 
 
-    <!-- ================= HERO ================= -->
+    <!-- ================= MAIN ================= -->
 
-    <main>
+    <main id="home">
+
+
+        <!-- ================= HERO ================= -->
 
         <section class="hero">
 
             <div class="container hero-content">
 
+
                 <div class="hero-text">
 
-                    <p class="eyebrow">
+                    <p
+                        class="eyebrow"
+                        data-i18n="hero_eyebrow"
+                    >
                         BY ANCO SOLUTIONS
                     </p>
 
-                    <h1>
+
+                    <h1 data-i18n="hero_title">
                         Useful applications.<br>
                         Built with logic.
                     </h1>
 
-                    <p class="hero-description">
-                        Simple, practical and intelligent applications
-                        designed to make everyday tasks easier.
+
+                    <p
+                        class="hero-description"
+                        data-i18n="hero_description"
+                    >
+                        Simple, practical and intelligent
+                        applications designed to make everyday
+                        tasks easier.
                     </p>
+
 
                     <div class="hero-buttons">
 
-                        <a href="#apps" class="btn btn-primary">
+                        <a
+                            href="#apps"
+                            class="btn btn-primary"
+                            data-i18n="hero_button_apps"
+                        >
                             Explore Applications
                         </a>
 
-                        <a href="#about" class="btn btn-secondary">
+
+                        <a
+                            href="#about"
+                            class="btn btn-secondary"
+                            data-i18n="hero_button_about"
+                        >
                             About Anco Solutions
                         </a>
 
@@ -87,21 +209,30 @@
                     <div class="hero-card">
 
                         <div class="hero-card-top">
+
                             <span class="status-dot"></span>
-                            <span>LOGIC APPS</span>
+
+                            <span>
+                                LOGIC APPS
+                            </span>
+
                         </div>
+
 
                         <div class="hero-icon">
                             LA
                         </div>
 
-                        <h2>
+
+                        <h2 data-i18n="hero_card_title">
                             Smart tools.<br>
                             Simple solutions.
                         </h2>
 
-                        <p>
-                            Applications created for real-world needs.
+
+                        <p data-i18n="hero_card_description">
+                            Applications created for
+                            real-world needs.
                         </p>
 
                     </div>
@@ -115,24 +246,34 @@
 
         <!-- ================= APPLICATIONS ================= -->
 
-        <section id="apps" class="apps-section">
+        <section
+            id="apps"
+            class="apps-section"
+        >
 
             <div class="container">
 
+
                 <div class="section-heading">
 
-                    <p class="eyebrow">
+                    <p
+                        class="eyebrow"
+                        data-i18n="apps_eyebrow"
+                    >
                         OUR APPLICATIONS
                     </p>
 
-                    <h2>
+
+                    <h2 data-i18n="apps_title">
                         Small apps.<br>
                         Useful ideas.
                     </h2>
 
-                    <p>
-                        Explore applications created by Anco Solutions
-                        to solve specific everyday and professional needs.
+
+                    <p data-i18n="apps_description">
+                        Explore applications created by
+                        Anco Solutions to solve specific
+                        everyday and professional needs.
                     </p>
 
                 </div>
@@ -146,27 +287,41 @@
                     <article class="app-card">
 
                         <div class="app-image">
+
                             <div class="app-placeholder">
                                 KEP-AEN
                             </div>
+
                         </div>
+
 
                         <div class="app-content">
 
-                            <span class="app-category">
+                            <span
+                                class="app-category"
+                                data-i18n="kep_category"
+                            >
                                 MARITIME
                             </span>
+
 
                             <h3>
                                 KEP-AEN
                             </h3>
 
-                            <p>
-                                A practical application designed to support
-                                maritime education and training.
+
+                            <p data-i18n="kep_description">
+                                A practical application designed
+                                to support maritime education
+                                and training.
                             </p>
 
-                            <a href="#" class="app-link">
+
+                            <a
+                                href="#"
+                                class="app-link"
+                                data-i18n="open_app"
+                            >
                                 Open App →
                             </a>
 
@@ -180,27 +335,41 @@
                     <article class="app-card">
 
                         <div class="app-image">
+
                             <div class="app-placeholder">
                                 DAILY
                             </div>
+
                         </div>
+
 
                         <div class="app-content">
 
-                            <span class="app-category">
+                            <span
+                                class="app-category"
+                                data-i18n="expenses_category"
+                            >
                                 FINANCE
                             </span>
+
 
                             <h3>
                                 Daily Expenses
                             </h3>
 
-                            <p>
-                                A simple way to record, organize and
-                                monitor your daily expenses.
+
+                            <p data-i18n="expenses_description">
+                                A simple way to record,
+                                organize and monitor your
+                                daily expenses.
                             </p>
 
-                            <a href="#" class="app-link">
+
+                            <a
+                                href="#"
+                                class="app-link"
+                                data-i18n="open_app"
+                            >
                                 Open App →
                             </a>
 
@@ -214,27 +383,41 @@
                     <article class="app-card">
 
                         <div class="app-image">
+
                             <div class="app-placeholder">
                                 NEW APP
                             </div>
+
                         </div>
+
 
                         <div class="app-content">
 
-                            <span class="app-category">
+                            <span
+                                class="app-category"
+                                data-i18n="coming_soon"
+                            >
                                 COMING SOON
                             </span>
 
-                            <h3>
+
+                            <h3 data-i18n="next_app_title">
                                 Your next application
                             </h3>
 
-                            <p>
-                                New useful applications are currently
-                                being developed by Anco Solutions.
+
+                            <p data-i18n="next_app_description">
+                                New useful applications are
+                                currently being developed
+                                by Anco Solutions.
                             </p>
 
-                            <a href="#contact" class="app-link">
+
+                            <a
+                                href="#contact"
+                                class="app-link"
+                                data-i18n="stay_tuned"
+                            >
                                 Stay tuned →
                             </a>
 
@@ -252,17 +435,25 @@
 
         <!-- ================= ABOUT ================= -->
 
-        <section id="about" class="about-section">
+        <section
+            id="about"
+            class="about-section"
+        >
 
             <div class="container about-grid">
 
+
                 <div class="about-title">
 
-                    <p class="eyebrow">
+                    <p
+                        class="eyebrow"
+                        data-i18n="about_eyebrow"
+                    >
                         ANCO SOLUTIONS
                     </p>
 
-                    <h2>
+
+                    <h2 data-i18n="about_title">
                         Technology with a purpose.
                     </h2>
 
@@ -271,21 +462,26 @@
 
                 <div class="about-text">
 
-                    <p>
-                        Anco Solutions develops small, practical and
-                        easy-to-use applications designed to solve
-                        real problems.
+                    <p data-i18n="about_text_1">
+                        Anco Solutions develops small,
+                        practical and easy-to-use applications
+                        designed to solve real problems.
                     </p>
 
-                    <p>
+
+                    <p data-i18n="about_text_2">
                         Our philosophy is simple:
-                        <strong>keep things logical, useful and easy.</strong>
+                        <strong>
+                            keep things logical, useful and easy.
+                        </strong>
                     </p>
 
-                    <p>
-                        Logic Apps is our collection of applications —
-                        tools created to help people work smarter,
-                        faster and more efficiently.
+
+                    <p data-i18n="about_text_3">
+                        Logic Apps is our collection of
+                        applications — tools created to help
+                        people work smarter, faster and more
+                        efficiently.
                     </p>
 
                 </div>
@@ -297,25 +493,37 @@
 
         <!-- ================= CONTACT ================= -->
 
-        <section id="contact" class="contact-section">
+        <section
+            id="contact"
+            class="contact-section"
+        >
 
             <div class="container contact-box">
 
-                <p class="eyebrow">
+                <p
+                    class="eyebrow"
+                    data-i18n="contact_eyebrow"
+                >
                     GET IN TOUCH
                 </p>
 
-                <h2>
+
+                <h2 data-i18n="contact_title">
                     Have an idea for an app?
                 </h2>
 
-                <p>
-                    We are always interested in useful ideas and
-                    practical solutions.
+
+                <p data-i18n="contact_description">
+                    We are always interested in useful ideas
+                    and practical solutions.
                 </p>
 
-                <a href="mailto:info@logicapps.store"
-                   class="btn btn-primary">
+
+                <a
+                    href="mailto:info@logicapps.store"
+                    class="btn btn-primary"
+                    data-i18n="contact_button"
+                >
                     Contact Us
                 </a>
 
@@ -333,12 +541,23 @@
         <div class="container footer-inner">
 
             <div>
-                <strong>LOGIC APPS</strong>
-                <span>by Anco Solutions</span>
+
+                <strong>
+                    LOGIC APPS
+                </strong>
+
+                <span>
+                    by Anco Solutions
+                </span>
+
             </div>
 
+
             <div>
-                © 2026 Anco Solutions
+
+                © <span id="footerYear"></span>
+                Anco Solutions
+
             </div>
 
         </div>
@@ -349,4 +568,5 @@
     <script src="app.js"></script>
 
 </body>
+
 </html>
