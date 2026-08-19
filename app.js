@@ -1473,6 +1473,10 @@ document
         priceId = "pri_01m0b47ssy8e539cbtq6gdm07s";
     }
 
+if (plan === "six-months") {
+    priceId = "pri_01m0b0rr15baqfrfhzmkpy86dq";
+}
+
     if (plan === "lifetime") {
         priceId = "pri_01m0b4gvcyz999xefany56zj52";
     }
