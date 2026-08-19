@@ -1465,23 +1465,41 @@ document
                  */
 
 
-                if (plan === "trial") {
+                if (product === "daily-expenses") {
 
-                    alert(
-                        getMessage(
-                            "trial_message"
-                        )
-                    );
+    let priceId = null;
 
-                } else {
+    if (plan === "yearly") {
+        priceId = "pri_01m0b47ssy8e539cbtq6gdm07s";
+    }
 
-                    alert(
-                        getMessage(
-                            "payment_message"
-                        )
-                    );
+    if (plan === "lifetime") {
+        priceId = "pri_01m0b4gvcyz999xefany56zj52";
+    }
 
-                }
+    if (!priceId) {
+        alert("This plan is not available yet.");
+        return;
+    }
+
+    Paddle.Checkout.open({
+        items: [
+            {
+                priceId: priceId,
+                quantity: 1
+            }
+        ]
+    });
+
+} else {
+
+    alert(
+        getMessage(
+            "payment_message"
+        )
+    );
+
+}
 
             }
 
