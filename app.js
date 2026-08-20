@@ -1409,21 +1409,17 @@ document
     .querySelectorAll(".plan-button")
     .forEach(button => {
 
-
         button.addEventListener(
             "click",
             function () {
 
-
                 const product =
                     this.dataset.product;
-
 
                 const plan =
                     this.dataset.plan;
 
-
-                const paddlePrice =
+                let priceId =
                     this.dataset.paddlePrice;
 
 
@@ -1432,78 +1428,130 @@ document
                     product
                 );
 
-
                 console.log(
                     "Selected plan:",
                     plan
                 );
 
-
                 console.log(
-                    "Paddle price:",
-                    paddlePrice
+                    "Paddle Price ID:",
+                    priceId
                 );
 
 
-                /*
-                 * PADDLE WILL BE CONNECTED HERE.
-                 *
-                 * Example later:
-                 *
-                 * Paddle.Checkout.open({
-                 *     items: [
-                 *         {
-                 *             priceId: paddlePrice,
-                 *             quantity: 1
-                 *         }
-                 *     ]
-                 * });
-                 *
-                 * We deliberately do NOT execute
-                 * this yet because the real Paddle
-                 * Price IDs have not been created.
-                 */
+                /* =========================================
+                   FALLBACK PRICE IDs
+                   ========================================= */
+
+                if (
+                    !priceId &&
+                    product === "daily-expenses"
+                ) {
+
+                    if (plan === "yearly") {
+
+                        priceId =
+                            "pri_01m0b47ssy8e539cbtq6gdm07s";
+
+                    }
+
+                    if (plan === "six-months") {
+
+                        priceId =
+                            "pri_01m0b0rr15baqfrfhzmkpy86dq";
+
+                    }
+
+                    if (plan === "lifetime") {
+
+                        priceId =
+                            "pri_01m0b4gvcyz999xefany56zj52";
+
+                    }
+
+                }
 
 
-                if (product === "daily-expenses") {
+                /* =========================================
+                   CHECK PRICE ID
+                   ========================================= */
 
-    let priceId = null;
+                if (!priceId) {
 
-    if (plan === "yearly") {
-        priceId = "pri_01m0b47ssy8e539cbtq6gdm07s";
-    }
+                    alert(
+                        "This plan is not available yet."
+                    );
 
-if (plan === "six-months") {
-    priceId = "pri_01m0b0rr15baqfrfhzmkpy86dq";
-}
+                    return;
 
-    if (plan === "lifetime") {
-        priceId = "pri_01m0b4gvcyz999xefany56zj52";
-    }
+                }
 
-    if (!priceId) {
-        alert("This plan is not available yet.");
-        return;
-    }
 
-    Paddle.Checkout.open({
-        items: [
-            {
-                priceId: priceId,
-                quantity: 1
-            }
-        ]
-    });
+                /* =========================================
+                   SELECT CURRENT PLAN
+                   ========================================= */
 
-} else {
+                document
+                    .querySelectorAll(
+                        `.product-plans[data-product="${product}"] .plan-card`
+                    )
+                    .forEach(card => {
 
-    alert(
-        getMessage(
-            "payment_message"
-        )
-    );
+                        card.classList.remove(
+                            "selected"
+                        );
 
-}
+                    });
+
+
+                const currentCard =
+                    this.closest(".plan-card");
+
+
+                if (currentCard) {
+
+                    currentCard.classList.add(
+                        "selected"
+                    );
+
+                }
+
+
+                /* =========================================
+                   PADDLE CHECKOUT
+                   ========================================= */
+
+                if (
+                    typeof Paddle === "undefined"
+                ) {
+
+                    alert(
+                        "Paddle could not be loaded."
+                    );
+
+                    return;
+
+                }
+
+
+                console.log(
+                    "Opening Paddle Checkout:",
+                    priceId
+                );
+
+
+                Paddle.Checkout.open({
+
+                    items: [
+
+                        {
+                            priceId: priceId,
+                            quantity: 1
+                        }
+
+                    ]
+
+                });
 
             }
 
