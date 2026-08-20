@@ -273,7 +273,7 @@ const translations = {
             "Επιλογή",
 
         payment_notice:
-            "Οι ασφαλείς πληρωμές θα πραγματοποιούνται μέσω Paddle.",
+            "Οι ασφαλείς πληρωμές πραγματοποιούνται μέσω Paddle.",
 
         about_eyebrow:
             "ANCO SOLUTIONS",
