@@ -27,17 +27,15 @@
         href="style.css"
     >
 
-<script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
+    <script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
 
-<script>
-    Paddle.Environment.set("sandbox");
+    <script>
+        Paddle.Environment.set("sandbox");
 
-    Paddle.Initialize({
-        token: "test_48980c7453ecc400fa9e35af673"
-    });
-</script>
-
-</head>
+        Paddle.Initialize({
+            token: "test_48980c7453ecc400fa9e35af673"
+        });
+    </script>
 
 </head>
 
@@ -376,7 +374,7 @@
 
 
             <!-- =================================================
-                 KEP-AEN
+                 KEP-AEN / SEA SERVICE CALCULATOR
                  ================================================= -->
 
             <article
@@ -387,12 +385,10 @@
 
                 <div class="app-image">
 
-    <img
-        src="Sea-Service-Calculator.png"
-        alt="Sea Service Calculator"
-    >
-
-</div>
+                    <img
+                        src="Sea-Service-Calculator.png"
+                        alt="Sea Service Calculator"
+                    >
 
                 </div>
 
@@ -452,9 +448,9 @@
                 <div class="app-image">
 
                     <img
-    src="Daily_Expences.jpg"
-    alt="Daily Expences"
->
+                        src="Daily_Expences.jpg"
+                        alt="Daily Expenses"
+                    >
 
                 </div>
 
@@ -616,7 +612,8 @@
 
 
         <!-- =================================================
-             KEP-AEN PLANS
+             C-SERVICE / SEA SERVICE CALCULATOR
+             7 DAYS TRIAL + YEARLY
              ================================================= -->
 
         <div
@@ -640,7 +637,6 @@
                 </h3>
 
             </div>
-
 
 
 
@@ -692,51 +688,6 @@
                         data-i18n="start_trial"
                     >
                         Start Trial
-                    </button>
-
-                </article>
-
-
-
-                <!-- MONTHLY -->
-
-                <article
-                    class="plan-card"
-                    data-plan="monthly"
-                >
-
-                    <h4
-                        data-i18n="monthly_title"
-                    >
-                        Monthly
-                    </h4>
-
-
-                    <p
-                        data-i18n="monthly_description"
-                    >
-                        Access for one month.
-                    </p>
-
-
-                    <div class="plan-price">
-                        <span
-                            data-price="kep-aen-monthly"
-                        >
-                            €—
-                        </span>
-                    </div>
-
-
-                    <button
-                        type="button"
-                        class="plan-button"
-                        data-product="kep-aen"
-                        data-plan="monthly"
-                        data-paddle-price=""
-                        data-i18n="choose_plan"
-                    >
-                        Choose Plan
                     </button>
 
                 </article>
@@ -795,59 +746,6 @@
                 </article>
 
 
-
-                <!-- LIFETIME -->
-
-                <article
-                    class="plan-card"
-                    data-plan="lifetime"
-                >
-
-                    <span
-                        class="plan-badge"
-                        data-i18n="one_time_badge"
-                    >
-                        ONE TIME
-                    </span>
-
-
-                    <h4
-                        data-i18n="lifetime_title"
-                    >
-                        Lifetime
-                    </h4>
-
-
-                    <p
-                        data-i18n="lifetime_description"
-                    >
-                        One payment. Lifetime access.
-                    </p>
-
-
-                    <div class="plan-price">
-                        <span
-                            data-price="kep-aen-lifetime"
-                        >
-                            €—
-                        </span>
-                    </div>
-
-
-                    <button
-                        type="button"
-                        class="plan-button"
-                        data-product="kep-aen"
-                        data-plan="lifetime"
-                        data-paddle-price=""
-                        data-i18n="choose_plan"
-                    >
-                        Choose Plan
-                    </button>
-
-                </article>
-
-
             </div>
 
         </div>
@@ -855,7 +753,8 @@
 
 
         <!-- =================================================
-             DAILY EXPENSES PLANS
+             DAILY EXPENSES
+             7 DAYS TRIAL + 6 MONTHS + YEARLY + LIFETIME
              ================================================= -->
 
         <div
@@ -885,49 +784,97 @@
             <div class="plans-grid">
 
 
-<!-- 6 MONTHS -->
 
-<article
-    class="plan-card"
-    data-plan="six-months"
->
+                <!-- TRIAL -->
 
-    <span
-        class="plan-badge"
-    >
-        6 MONTHS
-    </span>
+                <article
+                    class="plan-card"
+                    data-plan="trial"
+                >
 
-    <h4>
-        6 Months
-    </h4>
-
-    <p>
-        Access for six months.
-    </p>
-
-    <div class="plan-price">
-        €2.99
-    </div>
-
-    <button
-        type="button"
-        class="plan-button"
-        data-product="daily-expenses"
-        data-plan="six-months"
-        data-paddle-price="pri_01m0b0rr15baqfrfhzmkpy86dq"
-    >
-        Choose Plan
-    </button>
-
-</article>
-                
+                    <span
+                        class="plan-badge"
+                        data-i18n="trial_badge"
+                    >
+                        FREE TRIAL
+                    </span>
 
 
+                    <h4
+                        data-i18n="trial_title"
+                    >
+                        7 Days
+                    </h4>
 
-                
+
+                    <p
+                        data-i18n="trial_description"
+                    >
+                        Try the application free
+                        for 7 days.
+                    </p>
 
 
+                    <div class="plan-price">
+                        FREE
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="plan-button"
+                        data-product="daily-expenses"
+                        data-plan="trial"
+                        data-paddle-price=""
+                        data-i18n="start_trial"
+                    >
+                        Start Trial
+                    </button>
+
+                </article>
+
+
+
+                <!-- 6 MONTHS -->
+
+                <article
+                    class="plan-card"
+                    data-plan="six-months"
+                >
+
+                    <span
+                        class="plan-badge"
+                    >
+                        6 MONTHS
+                    </span>
+
+
+                    <h4>
+                        6 Months
+                    </h4>
+
+
+                    <p>
+                        Access for six months.
+                    </p>
+
+
+                    <div class="plan-price">
+                        €2.99
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="plan-button"
+                        data-product="daily-expenses"
+                        data-plan="six-months"
+                        data-paddle-price="pri_01m0b0rr15baqfrfhzmkpy86dq"
+                    >
+                        Choose Plan
+                    </button>
+
+                </article>
 
                 <!-- YEARLY -->
 
@@ -957,21 +904,24 @@
                         Access for one full year.
                     </p>
 
-<div class="plan-price">
-    <span
-        data-price="daily-expenses-yearly"
-    >
-        €4.99
-    </span>
-</div>
-                    
+
+                    <div class="plan-price">
+
+                        <span
+                            data-price="daily-expenses-yearly"
+                        >
+                            €4.99
+                        </span>
+
+                    </div>
+
 
                     <button
                         type="button"
                         class="plan-button"
                         data-product="daily-expenses"
                         data-plan="yearly"
-                        data-paddle-price=""
+                        data-paddle-price="pri_01m0b47ssy8e539cbtq6gdm07s"
                         data-i18n="choose_plan"
                     >
                         Choose Plan
@@ -1011,11 +961,13 @@
 
 
                     <div class="plan-price">
+
                         <span
                             data-price="daily-expenses-lifetime"
                         >
                             €9.99
                         </span>
+
                     </div>
 
 
@@ -1036,6 +988,7 @@
             </div>
 
         </div>
+
 
 
         <!-- PADDLE NOTICE -->
@@ -1230,24 +1183,8 @@
 
 
 <!-- =====================================================
-     PADDLE
+     APP JAVASCRIPT
      ===================================================== -->
-
-<!--
-     Paddle will be connected here later.
-
-     IMPORTANT:
-     Do not add real Paddle credentials yet.
-
-     The plan buttons already contain:
-     data-product
-     data-plan
-     data-paddle-price
-
-     We will connect these to Paddle
-     after the products and prices are created.
--->
-
 
 <script src="app.js"></script>
 
